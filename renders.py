@@ -55,7 +55,7 @@ def cluster_results(reduced_data, preds, centers, pca_samples):
 	cmap = cm.get_cmap('gist_rainbow')
 
 	# Color the points based on assigned cluster
-	for i, cluster in plot_data.groupby('Cluster'):   
+	for i, cluster in plot_data.groupby('Cluster'):
 	    cluster.plot(ax = ax, kind = 'scatter', x = 'Dimension 1', y = 'Dimension 2', \
 	                 color = cmap((i)*1.0/(len(centers)-1)), label = 'Cluster %i'%(i), s=30);
 
@@ -65,7 +65,7 @@ def cluster_results(reduced_data, preds, centers, pca_samples):
 	               alpha = 1, linewidth = 2, marker = 'o', s=200);
 	    ax.scatter(x = c[0], y = c[1], marker='$%d$'%(i), alpha = 1, s=100);
 
-	# Plot transformed sample points 
+	# Plot transformed sample points
 	ax.scatter(x = pca_samples[:,0], y = pca_samples[:,1], \
 	           s = 150, linewidth = 4, color = 'black', marker = 'x');
 
@@ -83,14 +83,14 @@ def channel_results(reduced_data, outliers, pca_samples):
 	try:
 	    full_data = pd.read_csv("customers.csv")
 	except:
-	    print "Dataset could not be loaded. Is the file missing?"
+	    print("Dataset could not be loaded. Is the file missing?")
 	    return False
 
 	# Create the Channel DataFrame
 	channel = pd.DataFrame(full_data['Channel'], columns = ['Channel'])
 	channel = channel.drop(channel.index[outliers]).reset_index(drop = True)
 	labeled = pd.concat([reduced_data, channel], axis = 1)
-	
+
 	# Generate the cluster plot
 	fig, ax = plt.subplots(figsize = (14,8))
 
@@ -100,11 +100,11 @@ def channel_results(reduced_data, outliers, pca_samples):
 	# Color the points based on assigned Channel
 	labels = ['Hotel/Restaurant/Cafe', 'Retailer']
 	grouped = labeled.groupby('Channel')
-	for i, channel in grouped:   
+	for i, channel in grouped:
 	    channel.plot(ax = ax, kind = 'scatter', x = 'Dimension 1', y = 'Dimension 2', \
 	                 color = cmap((i-1)*1.0/2), label = labels[i-1], s=30);
-	    
-	# Plot transformed sample points   
+
+	# Plot transformed sample points
 	for i, sample in enumerate(pca_samples):
 		ax.scatter(x = sample[0], y = sample[1], \
 	           s = 200, linewidth = 3, color = 'black', marker = 'o', facecolors = 'none');
