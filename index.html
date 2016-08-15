@@ -21253,10 +21253,10 @@ nhpGIiIiIiIS9NQwEhERERGRoKeGkYiIiIiIBD01jEREREREJOipYSQiIiIiIkFPDSMREREREQl6
 <p>The variance explained by the first 2 compoenents is 0.4433 + 0.2638 = 0.7071, i.e, ~70%. Using the first 4 features increases the amount to 0.4433 + 0.2638 + 0.1231 + 0.1012 = 0.9314, i.e., ~93%.</p>
 <p>In the visualization above, we can see the linear coefficients of each feature for the components. High positive/negative values indicate that the corresponding features contributs a lot to the components value (in either positive or negative way). Low values mean that the feature has no impact. The first 4 components can thus be described as follows:</p>
 <ul>
-<li>Component 1: Will have high values for customers wih high spendings on Milk, Grocery and Detergents &amp; Paper.</li>
-<li>Component 2: Will have high values for customers with high spendings on Fresh, Frozen and Delicatessen.</li>
-<li>Component 3: Will have high values for customers with high spendings on Frozen and Delicatessen as well as low spendings on Fresh.</li>
-<li>Component 4: Will have high values for customers with high spendings on Frozen as well as low spendings on Delicatessen.</li>
+<li>Component 1: Significant positive weight is placed on Detergents &amp; Paper (weight ~0.8) and meaningful weight is placed on Milk and Grocery (weights &gt; 0.4). This component can be described as spending on retail goods.</li>
+<li>Component 2: Significant positive weight is placed on Fresh (weight ~0.8) and meaningful weight is placed on Frozen and Delicatessen (weights ~0.5). This component can be described as characteristic of restaurants and hotels with Deli food.</li>
+<li>Component 3: Significant positive weight is placed on Delicatessen (weight ~0.6) and meaningful weight is placed on Frozen (weight ~0.3). Strong negative weight is placed on Fresh (weight ~ -0.7). This component can be described as characteristic of retailers selling special Deli food.</li>
+<li>Component 4: Significant positive weight is placed on Frozen (weight ~0.8) and significant negative weight is placed on Delicatessen (weight - ~0.6). This component can be described as characteristic of spending on of-the-shelf Frozen goods.</li>
 </ul>
 
 </div>
