@@ -1,10 +1,10 @@
-# Customer Segmentation project
+# Customer Segments project
 
-The dataset can be found in `...`.
+The dataset can be found in `customers.csv`. It describes customers of a wholesale distributers. Revealing more about it here would be considered a spoiler ;)
 
-Check out `customer_segmentation.ipynb` for a solution to this task.
+Check out `customer_segments.ipynb` for a solution to this task.
 
-You can see the solution at the [GitHub page](https://dominicbreuker.github.io/customer_segmentation/)
+You can see the solution at the [GitHub page](https://dominicbreuker.github.io/customer_segments/)
 
 ## Getting started
 
